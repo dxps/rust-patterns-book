@@ -24,6 +24,8 @@ mkdir -p book/pdf
 cat > pdf-style.css << 'EOF'
 /* Allow code blocks to break across pages */
 pre, code {
+    border-radius: 6px;
+    color: brown;
     page-break-inside: auto !important;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -35,15 +37,14 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 11pt;
+    font-size: 10pt;
     line-height: 1.5;
 }
 
 pre {
     background-color: #f5f5f5;
-    padding: 10px;
-    border-radius: 4px;
     font-size: 9pt;
+    padding: 10px;
 }
 
 code {
@@ -51,7 +52,7 @@ code {
 }
 
 @page {
-    margin: 1in;
+    margin: 0.5in;
     size: letter;
 }
 EOF
@@ -68,7 +69,7 @@ pandoc \
     --css=../pdf-style.css \
     --toc \
     --toc-depth=2 \
-    --highlight-style=tango \
+    --syntax-highlighting=tango \
     --metadata title="Rust Patterns" \
     -o ../book/pdf/rust-patterns.pdf
 
