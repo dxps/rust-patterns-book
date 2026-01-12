@@ -19,13 +19,32 @@ body {
 
 pre {
     background-color: #f5f5f5;
-    padding: 10px;
     font-size: 9pt;
-    border-radius: 6px;
+    padding: 10px;
 }
 
 code {
     font-family: "SF Mono", Menlo, Monaco, monospace;
+}
+
+/* Pandoc highlighted code blocks */
+div.sourceCode,
+pre.sourceCode {
+  background: #f8f8f8 !important;
+}
+
+/* Some themes set background on the inner code element too */
+pre.sourceCode > code,
+code.sourceCode {
+  background: #f8f8f8 !important;
+}
+
+/* If you want the code itself rounded, apply radius to the same element
+   that has the visible background (your outer wrapper). If your wrapper is
+   div.sourceCode, you can do: */
+div.sourceCode {
+  border-radius: 6px;   /* set to your desired radius */
+  overflow: hidden;     /* ensures inner content doesn’t “square off” corners */
 }
 
 @page {
