@@ -73,7 +73,7 @@ div.sourceCode {
 
 @page {
     margin: 0.5in;
-    size: letter;
+    size: a4;
 }
 EOF
 
